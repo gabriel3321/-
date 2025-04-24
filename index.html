@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Diary</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container fade-in" id="app">
+    <h1>Bem-vindo ao Social Diary</h1>
+    <div class="form-group" id="loginForm">
+      <input type="email" placeholder="Email" id="email" />
+      <input type="password" placeholder="Senha" id="password" />
+      <button onclick="login()">Entrar</button>
+      <p>Não tem conta? <a href="#" onclick="toggleForm()">Cadastre-se</a></p>
+    </div>
+    <div class="form-group hidden" id="registerForm">
+      <input type="text" placeholder="Nome de usuário" id="username" />
+      <input type="email" placeholder="Email" id="newEmail" />
+      <input type="password" placeholder="Senha" id="newPassword" />
+      <button onclick="register()">Cadastrar</button>
+      <p>Já tem conta? <a href="#" onclick="toggleForm()">Entrar</a></p>
+    </div>
+  </div>
+
+  <div class="container hidden fade-in" id="dashboard">
+    <h2>Bem-vindo, <span id="usernameDisplay">Usuário</span> 👋</h2>
+    <div class="menu">
+      <button onclick="goToPage('chat')">💬 Chat</button>
+      <button onclick="goToPage('diary')">📓 Diário</button>
+      <button onclick="goToPage('friends')">🤝 Amizades</button>
+    </div>
+    <div id="contentArea" class="content-area fade-in"></div>
+    <button onclick="logout()">Sair</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
